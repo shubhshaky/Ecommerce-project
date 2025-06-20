@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  frontend:
+    build:
+      context: .  # Docker will use the Dockerfile in the current directory
+    ports:
+      - "8084:80"   # Map port 80 on the host to port 80 in the container
+    networks:
+      - react-app-network
+
+networks:
+  react-app-network:
+    driver: bridge
+
